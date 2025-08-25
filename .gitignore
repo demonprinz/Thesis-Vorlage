@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nlo
+*.gz
+*.toc
+*.xdv
+*.log
+*.out
+*.run.xml
+*.bbl-SAVE-ERROR

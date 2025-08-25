@@ -1,0 +1,56 @@
+%!TEX program = xelatex
+\documentclass[12pt, pdf]{avt-thesis} 
+%Wähle oben entweder pdf oder print, default ist print. Pdf generiert einseite Dokumente, die an Bildschirmen besser aussehen, print ist für zweiseitigen druck (Buchdruck) und lässt daher Kapitel immer auf der rechten Seite beginnen. Das kann in PDFs nervige Leerseiten erzeugen, daher kann man das hier einstellen.
+
+\iffalse ANMERKUNGEN
+
+- die Vorlage sollte mit XeLaTeX compiliert werden
+- die Formatierung kann in avt-thesis.cls editiert werden
+- die Titelseite kann in pages/RWTH/Titelseite frei angepasst werden
+- Referenzen im Bibtex Format können zb. über Google scholar gefunden und in literature.bib eingefügt werden
+
+\fi
+\graphicspath{{4_images/}}
+\addbibresource{3_backmatter/library/libraryJR.bib}
+
+\begin{document}
+% Titlepage, table of contents, etc.
+    \frontmatter
+    \pagenumbering{Roman}  
+    \begin{titlepage}
+        \include{1_frontmatter/1_Titelseite}
+    \end{titlepage}
+    \include{1_frontmatter/2_Abstract}
+    \include{1_frontmatter/3_Aufgabenstellung}
+    
+%    \include{1_frontmatter/4_Erklaerung}
+%   \include{1_frontmatter/4_Erklaerung} %Falls es eine Gruppenarbeit ist
+    \include{1_frontmatter/4_Erklaerung}
+    \tableofcontents
+
+% Thesis content - Add your chapters here
+    \mainmatter
+    \onehalfspacing
+    
+%   \include{0_templates/About_Latex}    
+%  \include{0_templates/About_Scientific-writing} 
+    
+    \include{2_chapter/1_Introduction}
+    \include{2_chapter/2_TheoreticalBackground}
+%    \include{2_chapter/3_Concept/Hypothesis} %optional
+    \include{2_chapter/3_Materials&Methods}
+    \include{2_chapter/4_Results&Discussion}
+    \include{2_chapter/5_Conclusion&Outlook}
+    
+% Nomenclature, bibliography, etc.
+    \include{3_backmatter/acknowledgement}
+    \include{3_backmatter/nomenclature}
+
+    \printbibliography[heading=bibintoc]
+    \listoffigures
+    \listoftables
+    \appendix
+    \include{3_backmatter/Appendix}
+    
+    
+\end{document}
