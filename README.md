@@ -1,61 +1,126 @@
-# Thesis-Vorlage
+# AVT Thesis LaTeX Template
 
-Dieses Repository enthält eine LaTeX-Klasse (`avt-thesis.cls`) für das Schreiben von Abschlussarbeiten (Bachelor, Master, Diplom) am AVT. Das Template richtet sich an Anfänger und ermöglicht ein einfaches Erstellen von sauber formatierten Dokumenten.
+Dieses Repository enthält eine LaTeX-Klasse (`avt-thesis.cls`) sowie eine Beispiel-`main.tex` für das Schreiben von Abschlussarbeiten (Bachelor, Master, Diplom) am AVT.  
+Das Template ist so gestaltet, dass auch Anfänger schnell starten können.
 
 ---
 
-## Inhalt des Repositories
+## 🚀 Schnellstart
 
-- `avt-thesis.cls` – Die LaTeX-Klasse, die das Layout und die Formatierung der Arbeit definiert.
-- Beispiel-Ordner (optional) – Enthält ein Beispielprojekt, das zeigt, wie die Klasse verwendet wird.
+Wenn du direkt loslegen willst, lade dir das Starterpaket herunter:  
+
+📦 **[avt-thesis-starter.zip](./avt-thesis-starter.zip)**  
+
+1. Entpacke das ZIP.  
+2. Öffne `main.tex` in deinem LaTeX-Editor.  
+3. Kompiliere mit **XeLaTeX** → PDF-Thesis wird erstellt.  
+
+---
+
+## Projektstruktur
+
+Damit alles funktioniert, sollte das Projekt wie folgt aufgebaut sein:
+
+```
+avt-thesis/
+├── avt-thesis.cls               # LaTeX-Klasse (Layout & Formatierung)
+├── main.tex                     # Hauptdokument
+│
+├── 1_frontmatter/               # Frontmatter: Titelseite, Abstract etc.
+│   ├── 1_Titelseite.tex
+│   ├── 2_Abstract.tex
+│   ├── 3_Aufgabenstellung.tex
+│   └── 4_Erklaerung.tex
+│
+├── 2_chapter/                   # Hauptkapitel
+│   ├── 1_Introduction.tex
+│   ├── 2_TheoreticalBackground.tex
+│   ├── 3_Materials&Methods.tex
+│   ├── 4_Results&Discussion.tex
+│   └── 5_Conclusion&Outlook.tex
+│
+├── 3_backmatter/                # Anhang, Bibliographie, Danksagung
+│   ├── acknowledgement.tex
+│   ├── nomenclature.tex
+│   ├── Appendix.tex
+│   └── library/
+│       └── libraryJR.bib        # BibTeX-Literaturdatenbank
+│
+└── 4_images/                    # Abbildungen
+    └── beispielbild.png
+```
 
 ---
 
 ## Voraussetzungen
 
-Um die LaTeX-Klasse zu verwenden, benötigst du:
+1. **LaTeX-Distribution installieren**
+   - Windows: [MiKTeX](https://miktex.org/)
+   - Mac: [MacTeX](https://tug.org/mactex/)
+   - Linux: TeX Live
 
-1. Eine LaTeX-Distribution:
-   - **Windows:** [MiKTeX](https://miktex.org/)
-   - **Mac:** [MacTeX](https://tug.org/mactex/)
-   - **Linux:** TeX Live (z. B. über Paketmanager)
-2. Einen Editor:
-   - [TeXstudio](https://www.texstudio.org/)
-   - [Overleaf](https://www.overleaf.com/) (online, keine Installation nötig)
+2. **Editor wählen**
+   - Lokal: [TeXstudio](https://www.texstudio.org/), VS Code mit LaTeX-Plugin
+   - Online: [Overleaf](https://www.overleaf.com/)
+
+3. **Kompilieren mit XeLaTeX**  
+   Stelle sicher, dass im Editor **XeLaTeX** als Compiler eingestellt ist.  
+   In `main.tex` ist dies schon mit  
+   ```latex
+   %!TEX program = xelatex
+   ```  
+   voreingestellt.
 
 ---
 
-## Erste Schritte
+## Eigene Inhalte einfügen
 
-1. Erstelle ein neues LaTeX-Dokument (`main.tex`) in demselben Ordner wie `avt-thesis.cls`.
-2. Verwende die Klasse am Anfang deines Dokuments:
+- **Titel**: In `1_frontmatter/1_Titelseite.tex` ändern  
+- **Kapitel**: Dateien in `2_chapter/` bearbeiten  
+- **Bilder**: In `4_images/` ablegen und in den Kapiteln einfügen  
+- **Literatur**: Quellen in `3_backmatter/library/libraryJR.bib` einfügen  
 
+Beispiel:  
 ```latex
-\documentclass{avt-thesis}
+Wie in \cite{Einstein1905} beschrieben ...
+```
 
-\begin{document}
+---
 
-\title{Titel deiner Arbeit}
-\author{Dein Name}
-\date{\today}
+## Nützliche Hinweise
 
-\maketitle
+- **Bilder einfügen:**
+  ```latex
+  egin{figure}[h]
+    \centering
+    \includegraphics[width=0.7	extwidth]{beispielbild.png}
+    \caption{Bildunterschrift}
+  \end{figure}
+  ```
 
-\tableofcontents
+- **Formeln:**
+  - Inline: `$E = mc^2$`
+  - Abgesetzt:
+    ```latex
+    \[
+    F = m \cdot a
+    \]
+    ```
 
-\chapter{Einleitung}
-Hier beginnt deine Arbeit.
+- **Kapitel deaktivieren:**  
+  Kommentiere in `main.tex` die entsprechende `\include{...}`-Zeile mit `%` aus.
 
-\chapter{Theorie}
-Theoretischer Hintergrund.
+---
 
-\chapter{Methoden}
-Beschreibe hier deine Experimente oder Analysen.
+## Lizenz
 
-\chapter{Ergebnisse}
-Präsentiere deine Resultate.
+Dieses Template kann frei genutzt und angepasst werden.  
+Pull Requests und Verbesserungen sind willkommen!
 
-\chapter{Fazit}
-Schlussfolgerungen.
+---
 
-\end{document}
+## Hilfe
+
+- [LaTeX Project](https://www.latex-project.org/)
+- [BibLaTeX Dokumentation](https://ctan.org/pkg/biblatex)
+- Fragen stellen: *Issue* im Repository eröffnen
