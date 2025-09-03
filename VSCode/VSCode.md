@@ -1,4 +1,4 @@
-#Setup VSCode
+# Setup VSCode
 
 Das einrichten von VSCode ist im grunde sehr einfach. Nach der Installation siehst du links am Fensterrand ein Symbol mit mehreren Quadraten, klicke darauf.
 Es öffnet sich das Fenster in dem man Erweiterungen installieren kann. Nun suchst und installierst du einfach die folgenden Erweiterungen:
