@@ -19,6 +19,7 @@ Im Grunde reicht das zum Beginnen mit LaTeX schon aus. Ein paar Punkte die ich n
 
 Die settings.json Datei hier ändert ein paar Dinge, eine davon ist wichtig.
 Wichtig ist, dass die Kompilierreihenfolge die folgende ist:
+
 	1. XeLaTeX
 	2. Makeglossaries
 	3. biber
