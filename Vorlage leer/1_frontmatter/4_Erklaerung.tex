@@ -1,0 +1,89 @@
+%!TEX root = ../../main.tex
+\tikzset{external/prefix=tikz/Erklärung/}
+% Seite mit eidesstattlicher Erklärung
+\begin{otherlanguage}{ngerman}
+
+
+\newcommand{\underlinedTitle}[1]{%
+  \begin{tikzpicture}[baseline=(textnode.base)]
+    \node[inner sep=0pt, outer sep=0pt, anchor=base, text width=\textwidth] (textnode) {%
+      \setlength{\tabcolsep}{0pt}%
+      \begin{tabular}{@{}p{\textwidth}@{}}
+        #1
+      \end{tabular}%
+    };
+    % unterstreicht jede Zeile
+    \foreach \y in {-12pt,-26pt,-40pt} { % 12pt pro Zeile anpassen
+      \draw ([yshift=\y]textnode.north west) -- ([yshift=\y]textnode.north east);
+    }
+  \end{tikzpicture}%
+}
+
+
+% Erkärung nach Vorlage von AVT/PT
+\begin{center} {\LARGE Eidesstattliche Erklärung} \end{center}
+
+
+\noindent
+\field[30ex]{\LastName, \FirstName} \hspace{15ex} \field[30ex]{\Matriculation}\\
+\phantom{}\hspace{6ex} Name, Vorname \hspace{32.5ex} Matrikelnummer
+
+Ich versichere hiermit an Eides statt, dass ich die vorliegende \texttypeDE mit dem Titel: \vspace{0.2cm}\\
+\underlinedTitle{\titleEN}\\
+selbstständig und ohne unzulässige fremde Hilfe (insbes. akademisches Ghostwriting) erbracht habe.
+Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt; dies umfasst
+insbesondere auch Software und Dienste zur Sprach-, Text- und Medienproduktion. Ich erkläre, dass
+für den Fall, dass die Arbeit in unterschiedlichen Formen eingereicht wird (z.B. elektronisch, gedruckt,
+geplottet, auf einem Datenträger) alle eingereichten Versionen vollständig übereinstimmen. Die Arbeit
+hat in gleicher oder ähnlicher Form noch keiner Prüfungsbehörde vorgelegen.\vspace{-0.5cm}\\
+
+\noindent\field[30ex]{\Place, \Date} \hspace{15ex} \field[30ex]{\Signature}\\
+\phantom{}\hspace{8ex} Ort, Datum  \hspace{35.5ex} Unterschrift \vspace{0.1cm}\\
+\textbf{Belehrung:}\\
+\textbf{\S 156 StGB: Falsche Versicherung an Eides statt}
+
+\noindent Wer vor einer zur Abnahme einer Versicherung an Eides statt zuständigen Behörde eine solche Versicherung
+falsch abgibt oder unter Berufung auf eine solche Versicherung falsch aussagt, wird mit Freiheitsstrafe bis zu drei
+Jahren oder mit Geldstrafe bestraft.
+
+\textbf{\S 161 StGB: Fahrlässiger Falscheid; fahrlässige falsche Versicherung an Eides statt}
+
+\noindent(1) Wenn eine der in den \S\S 154 bis 156 bezeichneten Handlungen aus Fahrlässigkeit begangen worden ist, so tritt Freiheitsstrafe bis zu einem Jahr oder Geldstrafe ein.
+
+\noindent (2) Straflosigkeit tritt ein, wenn der Täter die falsche Angabe rechtzeitig berichtigt. Die Vorschriften des § 158 Abs. 2 und 3 gelten entsprechend.
+
+\noindent Die vorstehende Belehrung habe ich zur Kenntnis genommen:\vspace{0.4cm}\\
+\noindent\field[30ex]{\Place, \Date} \hspace{15ex} \field[30ex]{\Signature}\\
+\phantom{}\hspace{8ex} Ort, Datum  \hspace{35.5ex} Unterschrift \vspace{0.1cm}\newpage
+\end{otherlanguage}
+
+
+\begin{center} {\LARGE Declaration} \end{center}
+
+I hereby declare to have listed all aids used in this thesis alongside their application below. This concerns in particular software and services for language, text, and media production. 
+I have been made aware by my supervisor of the proper and improper use of such aids in the thesis.\newline
+In this thesis, I have
+\begin{itemize}
+	\item[$\Box$] In particular not used software and services for language, text, and media production. 
+	\item[$\Box$] 
+	used the following aids (Please also list how you applied each aid):\\\\
+
+
+\centering
+\begin{tabular}{ll} 
+\toprule
+Tool(s) used & Reason for use  \\
+\midrule
+DeepL        & Grammar/ Spell checker, Reformulating            \\
+ChatGPT      & LaTeX \& Python debugging and syntax, finding sources \\
+            
+\bottomrule
+\end{tabular}
+%* Please fill out the table in Excel using the Abrreviations specified on this page, then import the table in https://www.latex-tables.com/
+% Press Auto-Booktabs, then press generate text.
+% Lastly, please add the command \midpointrule after the first line, e.g.,
+% Section & Tool Used & Reasoning  \\\midrule 
+\end{itemize}
+
+
+ \vspace{2cm}
