@@ -115,14 +115,6 @@ Wie in \cite{Einstein1905} beschrieben ...
   \end{figure}
   ```
 
-- **Formeln:**
-  - Inline: `$E = mc^2$`
-  - Abgesetzt:
-    ```latex
-    \[
-    F = m \cdot a
-    \]
-    ```
 
 - **Kapitel deaktivieren:**  
   Kommentiere in `main.tex` die entsprechende `\include{...}`-Zeile mit `%` aus.
