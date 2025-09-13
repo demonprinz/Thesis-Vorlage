@@ -1,4 +1,4 @@
-\ProvidesClass{avt-thesis}
+\ProvidesClass{style}
 
 % Configure and load scrbook
 \newcommand{\baseclass}{scrbook}
@@ -8,7 +8,7 @@
 \PassOptionsToClass{
     paper=a4,
     parskip,
-    pointlessnumbers,
+    numbers=noenddot,
     listof=totoc
 }{\baseclass}
 % Optionen definieren
