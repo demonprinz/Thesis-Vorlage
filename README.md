@@ -109,7 +109,8 @@ Thesis-Vorlage/
 
 - Kapitel temporär deaktivieren: `\include{}`-Zeile in `main.tex` auskommentieren  
 - Große Bilder vor dem Einfügen komprimieren  
-- Eigene TikZ-Grafiken in Unterordnern von `Tikz/` strukturieren
+- Die Installation von TeX dauert lange, das ist normal
+- Bilder die mit Tikz eingebunden werden verlangsamen den Kompilierprozess stark. Wenn du nur einfache Beschriftungen und Pfeile brauchst empfehle ich overpic. Wenn das nicht ausreicht kannst du natürlich Tikz nutzen, das ist standardmäßig auf externalize eingestellt. Bei einfachen Tikz Umgebungen muss das Bild nicht jedes mal neu kompiliert werden sondern nur einmal und wird dann einfach geladen. Sollte das nicht funktionieren muss externalize abgestellt und/oder eine andere Alternative gesucht werden.
 
 ---
 
@@ -129,5 +130,5 @@ Die Vorlage ist **frei verwendbar und anpassbar**. Pull Requests und Verbesserun
 
 ## ℹ️ Hintergrund
 
-- Ursprünglich von AVT (Anwendungszentrum Technik & Umwelt)  
+- Ursprünglich von AVT (Aachener Verfahrens Technik)  
 - Überarbeitet für einfachere Nutzung, klare Struktur und bessere Erweiterbarkeit
