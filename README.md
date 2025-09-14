@@ -1,6 +1,6 @@
 # AVT Thesis LaTeX Template
 
-Dieses Repository enthält eine LaTeX-Klasse (`Style.cls`) sowie eine Beispiel-`main.tex` für das Schreiben von Abschlussarbeiten (Bachelor, Master, Diplom). Die Vorlage stammt ursprünglich vom AVT, und ist seitdem angepasst worden.  
+Dieses Repository enthält eine LaTeX-Klasse (`Style.cls`) sowie eine Beispiel-Ordnerstruktur inklusive der nötigen `main.tex` für das Schreiben von Abschlussarbeiten (Bachelor, Master, Diplom). Die Vorlage stammt ursprünglich vom AVT, und ist seitdem angepasst worden.  
 Das Template ist so gestaltet, dass auch Anfänger schnell starten können.
 
 ---
