@@ -1,39 +1,53 @@
-# AVT Thesis LaTeX Template
+# 📝 AVT Thesis LaTeX Vorlage
 
-Dieses Repository enthält eine LaTeX-Klasse (`Style.cls`) sowie eine Beispiel-Ordnerstruktur inklusive der nötigen `main.tex` für das Schreiben von Abschlussarbeiten (Bachelor, Master, Diplom). Die Vorlage stammt ursprünglich vom AVT, und ist seitdem angepasst worden.  
-Das Template ist so gestaltet, dass auch Anfänger schnell starten können.
+**Eine flexible und anfängerfreundliche LaTeX-Vorlage** für Abschlussarbeiten (Bachelor, Master, Diplom) – basierend auf der Originalvorlage vom AVT mit Erweiterungen und Anpassungen.
+
+---
+
+## 📦 Inhalt
+
+Dieses Repository enthält:
+
+- `avt-thesis.cls` – Die LaTeX-Klasse, die Layout und Formatierung übernimmt  
+- `main.tex` – Das Hauptdokument mit allen globalen Einstellungen (Titelblatt, Erklärung, Meta-Informationen)  
+- Beispiel-Verzeichnisstruktur mit Kapiteln, Front- und Backmatter  
+- Beispielbilder, Bibliographiedatenbank, Grafiken usw.
 
 ---
 
 ## 🚀 Schnellstart
 
-Wenn du direkt loslegen willst, lade dir das Starterpaket herunter:  
+So kannst du sofort loslegen:
 
-📦 **[avt-thesis-starter.zip](./avt-thesis-starter.zip)**  
+> ⚠️ **Hinweis für Windows-Nutzer:**  
+> Bitte verwende **Git Bash** (mitinstalliert bei [Git for Windows](https://git-scm.com/download/win)) und **nicht die normale Eingabeaufforderung (`cmd`) oder PowerShell**, da dort `git` oft nicht verfügbar ist.
 
-1. Entpacke das ZIP.  
-2. Öffne `main.tex` in deinem LaTeX-Editor.  
-3. - die Vorlage muss folgendermaßen kompiliert werden da sonst unter Umständen die Abkürzungen oder das Literaturverzeichnis nicht funktionieren:
-    1. XeLaTex
-    2. Makeglossaries
-    3. Biber
-    4. XeLaTex
-    5. XeLaTex
+1. Repository klonen:
+
+   ```bash
+   git clone https://github.com/demonprinz/Thesis-Vorlage.git
+   ```
+
+2. In das Verzeichnis wechseln und `main.tex` in deinem bevorzugten LaTeX-Editor öffnen.
+
+3. Dokument kompilieren in dieser Reihenfolge:
+
+   1. **XeLaTeX**  
+   2. **Makeglossaries** (falls Glossar vorhanden)  
+   3. **Biber** (für Literatur)  
+   4. **XeLaTeX**  
+   5. **XeLaTeX**
+
 ---
 
-Trage alle Informationen zu der Arbeit in main.tex ein, ersetze das Institutslogo und die Unterschrift. Die Titelseite und Eidesstattliche Erlärung aktualisieren sich automatisch und müssen voraussichtlich nciht angepasst werden.
-
-## Projektstruktur
-
-Damit alles funktioniert, sollte das Projekt wie folgt aufgebaut sein:
+## 🗂 Projektstruktur
 
 ```
-Abschlussarbeit/
-├── avt-thesis.cls               # LaTeX-Klasse (Layout & Formatierung)
-├── main.tex                     # Hauptdokument
+Thesis-Vorlage/
+├── avt-thesis.cls               # LaTeX-Klasse
+├── main.tex                     # Hauptdokument mit Titelblatt-Infos
 │
-├── 1_frontmatter/               # Frontmatter: Titelseite, Abstract etc.
-│   ├── 1_Titelseite.tex
+├── 1_frontmatter/               # Abstract, Aufgabenstellung etc.
 │   ├── 2_Abstract.tex
 │   ├── 3_Aufgabenstellung.tex
 │   └── 4_Erklaerung.tex
@@ -50,86 +64,70 @@ Abschlussarbeit/
 │   ├── nomenclature.tex
 │   ├── Appendix.tex
 │   └── library/
-│       └── libraryJR.bib        # BibTeX-Literaturdatenbank
+│       └── libraryJR.bib        # BibLaTeX-Datenbank
 │
 ├── 4_images/                    # Abbildungen
 │   └── beispielbild.png
 │
-├── 5_Misc/                    # Sonstige Dateien
-│   └── Vortrag.pptx
+├── Tikz/                        # Eigene TikZ-Grafiken
+│   ├── Introduction/
+│   ├── Theory/
+│   └── ...
 │
-└── Tikz/                    # Abbildungen
-    └── Introduction/
-    └── Theory/
-    .
-    .
-    .
-
+└── 5_Misc/                      # Sonstiges (z. B. Vortrag)
+    └── Vortrag.pptx
 ```
 
 ---
 
-## Voraussetzungen
+## ⚙️ Wichtige Hinweise zur Anpassung
 
-1. **LaTeX-Distribution installieren**
-   - Windows: [MiKTeX](https://miktex.org/)
-   - Mac: [MacTeX](https://tug.org/mactex/)
-   - Linux: TeX Live
+- **Titelblatt und Eidesstattliche Erklärung**:  
+  Alle persönlichen Informationen (Name, Matrikelnummer, Betreuer, Titel, Datum etc.) werden **zentral in `main.tex`** gepflegt und **automatisch** auf dem Titelblatt **und** in der Eidesstattlichen Erklärung verwendet.  
+  → Du musst diese Daten **nicht** in den Dateien in `1_frontmatter/` anpassen.
 
-2. **Editor wählen**
-   - Lokal: [TeXstudio](https://www.texstudio.org/), VS Code mit LaTeX-Plugin
-   - Online: [Overleaf](https://www.overleaf.com/)
+- **Kapitel**: Neue Kapiteldateien in `2_chapter/` anlegen und in `main.tex` mit `\include{}` einbinden.
 
-3. **Kompilieren
-   Stelle sicher, dass im Editor der Richtige als Compiler eingestellt ist. Eine Settingsdatei für VS Code ist in diesem Repo verfügbar.  
-   In `main.tex` ist dies schon mit  
-   ```latex
-   %!TEX program = xelatex
-   ```  
-   voreingestellt.
+- **Literatur**: Quellen in `3_backmatter/library/libraryJR.bib` eintragen und mit `\cite{}` referenzieren.
+
+- **Abbildungen**: Bilder in `4_images/` speichern und mit `\includegraphics{}` einbinden.
 
 ---
 
-## Eigene Inhalte einfügen
+## 🔧 Voraussetzungen
 
-- **Titel**: In `1_frontmatter/1_Titelseite.tex` ändern  
-- **Kapitel**: Dateien in `2_chapter/` bearbeiten  
-- **Bilder**: In `4_images/` ablegen und in den Kapiteln einfügen  
-- **Literatur**: Quellen in `3_backmatter/library/libraryJR.bib` einfügen  
-
-Beispiel:  
-```latex
-Wie in \cite{Einstein1905} beschrieben ...
-```
+| Komponente | Beschreibung |
+|------------|-------------|
+| **LaTeX-Distribution** | z. B. TeX Live (Linux), MiKTeX (Windows), MacTeX (macOS) |
+| **Editor / Umgebung**   | Lokal: TeXstudio, VS Code (+ LaTeX-Plugin) <br> Online: Overleaf |
+| **Compiler**             | XeLaTeX (wegen Unicode & Schriftarten) |
+| **Tools**                | Makeglossaries (für Glossare), Biber (für Literaturverwaltung) |
 
 ---
 
-## Nützliche Hinweise
+## 💡 Tipps
 
-- **Bilder einfügen:**
-  ```latex
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7	extwidth]{beispielbild.png}
-    \caption{Bildunterschrift}
-  \end{figure}
-  ```
-
-
-- **Kapitel deaktivieren:**  
-  Kommentiere in `main.tex` die entsprechende `\include{...}`-Zeile mit `%` aus.
+- Kapitel temporär deaktivieren: `\include{}`-Zeile in `main.tex` auskommentieren  
+- Große Bilder vor dem Einfügen komprimieren  
+- Eigene TikZ-Grafiken in Unterordnern von `Tikz/` strukturieren
 
 ---
 
-## Lizenz
+## 📄 Lizenz
 
-Dieses Template kann frei genutzt und angepasst werden.  
-Pull Requests und Verbesserungen sind willkommen!
+Die Vorlage ist **frei verwendbar und anpassbar**. Pull Requests und Verbesserungen sind willkommen!
 
 ---
 
-## Hilfe
+## 🆘 Support
 
-- [LaTeX Project](https://www.latex-project.org/)
-- [BibLaTeX Dokumentation](https://ctan.org/pkg/biblatex)
-- Fragen stellen: *Issue* im Repository eröffnen
+- Lies bei Problemen zuerst die LaTeX- und Biber-Dokumentation  
+- Eröffne bei Fragen ein **Issue** in diesem Repository  
+- Nutze die vorhandenen Beispielkomponenten als Orientierung
+
+---
+
+## ℹ️ Hintergrund
+
+- Ursprünglich von AVT (Anwendungszentrum Technik & Umwelt)  
+- Überarbeitet für einfachere Nutzung, klare Struktur und bessere Erweiterbarkeit
