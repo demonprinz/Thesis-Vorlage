@@ -1,0 +1,3 @@
+# Setup Overleaf
+
+Ganz ehrlich, wenn du keinen Premium Zugang zu Overleaf vom Institut bekommst, lass es. Die Kompilierzeit die in der Gratisversion verfügbar ist, reicht höchstens für kleine Dateien. Alles was über ein paar Seiten mit Querverweisen wie Zitationen oder Grafiken hinausgeht sprengt schnell die 12 Sekunden, die die einem geben. AM FZJ gibt es IffTeX, das sehr ähnlich ist ohne die die Zeitbegrenzung, aber halt nur für FZJ Mitarbeiter. VSCode mit der native GitHub Integrierung oder TeXStudio sind Welten sinnvoller
